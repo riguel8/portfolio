@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-theme="Blue_Theme" class="dark selected" data-layout="vertical"
+    data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/png" href="assets/images/2x2.png" />
+    <link href="assets/css/css2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+    <!-- Core Css -->
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <title>Riguel</title>
+    <link rel="stylesheet" href="assets/css/jquery-jvectormap.css">
+</head>
+
+<body class="DEFAULT_THEME bg-lightprimary dark:bg-darkbody">
+
+    <!-- Toast -->
+    <div id="dismiss-toast"
+        class="toast-onload opacity-0   hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-primary rounded-md"
+        role="alert">
+        <div class="flex gap-2 p-3">
+            <i class="ti ti-alert-circle text-white text-lg"></i>
+            <div>
+                <h5 class="font-semibold text-white">Welcome</h5>
+                <p class="text-fs_12 text-white">Feel free to explore my portfolio.</p>
+            </div>
+            <div class="ms-auto">
+                <button type="button" data-hs-remove-element="#dismiss-toast">
+                    <i class="ti ti-x text-lg text-white opacity-70 leading-none"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- End Toast -->
+
+    <main>
+        <!--start the project-->
+        <div id="main-wrapper" class="flex p-5">
+
+            <aside id="application-sidebar-brand"
+                class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto xl:rtl:right-5 rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical  left-sidebar transition-all duration-300 h-screen z-[2] flex-shrink-0  w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark xl:top-5 xl:start-5 shadow-md xl:rounded-md overflow-hidden">
+                <div class="px-4 mt-5 mini-layout" data-te-sidenav-menu-ref>
+                    <nav class="hs-accordion-group w-full flex flex-col">
+                        <ul data-te-sidenav-menu-ref id="sidebarnav">
+                            <!-- Profile Section (no card) -->
+                            <div class="text-center mt-2 mb-2">
+                                <!-- Profile Picture -->
+                                <img src="assets/images/2x2.png" alt="profile"
+                                    class="h-20 w-20 rounded-full object-cover mx-auto mb-3">
+
+                                <!-- Name -->
+                                <h5 class="font-semibold text-lg leading-normal text-dark dark:text-white">
+                                    Ruel Miguel Diaz
+                                </h5>
+
+                                <!-- Position -->
+                                <span class="text-xs text-gray-600 dark:text-gray-400">
+                                    Web & Software Developer<br>
+                                    UX / UX Designer
+                                </span>
+                                <div class="flex flex-col gap-4 mt-5">
+                                    <a class="btn btn-light-primary" href="assets/files/Resume.pdf" target="_blank"
+                                        download>
+                                        <iconify-icon icon="solar:download-minimalistic-bold-duotone"
+                                            class="me-2"></iconify-icon>
+                                        Resume
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Minimal sidebar for portfolio -->
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link active before:bg-lightprimary hover:text-primary text-primary dark:text-primary"
+                                    href="index.html">
+                                    <iconify-icon icon="solar:home-line-duotone" class="text-xl p-2"></iconify-icon>
+                                    <span class="hide-menu flex-shrink-0">Home</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link before:bg-lightindigo hover:text-indigo" href="about.html">
+                                    <iconify-icon icon="solar:user-circle-line-duotone"
+                                        class="text-xl p-2"></iconify-icon>
+                                    <span class="hide-menu flex-shrink-0">About</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link before:bg-lightsuccess hover:text-success"
+                                    href="achievements.html">
+                                    <iconify-icon icon="solar:medal-ribbons-star-line-duotone"
+                                        class="text-xl p-2"></iconify-icon>
+                                    <span class="hide-menu flex-shrink-0">Achievements</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link before:bg-lightwarning hover:text-warning" href="projects.html">
+                                    <iconify-icon icon="solar:folder-favourite-bookmark-line-duotone"
+                                        class="text-xl p-2"></iconify-icon>
+                                    <span class="hide-menu flex-shrink-0">Projects</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link before:bg-lighterror hover:text-error" href="services.html">
+                                    <iconify-icon icon="solar:case-line-duotone" class="text-xl p-2"></iconify-icon>
+                                    <span class="hide-menu flex-shrink-0">Services</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+                <!-- Bottom User Profile -->
+                <div class="px-4 pt-4 relative hide-menu">
+                    <div class="bg-lightprimary dark:bg-darkprimary p-4 rounded-md">
+                        <div class="">
+                            <div class="flex items-center">
+                                <!-- <img src="assets/images/2x2.png" class="w-11 h-11 rounded-full object-cover mx-auto"
+                                    alt="profile" /> -->
+                                <div class="ml-4 rtl:mr-4 rtl:ml-0">
+                                    <h5 class="text-lg font-semibold text-dark dark:text-white">Riguel</h5>
+                                    <!-- <p class="text-sm font-normal text-link dark:text-darklink ">Nickname</p> -->
+                                </div>
+                                <div class="ms-auto hs-tooltip hs-tooltip-toggle">
+                                    <div class="icon-nav items-center gap-2  lg:flex hidden">
+                                        <!-- Theme Toggle  -->
+                                        <button type="button"
+                                            class="hs-dark-mode-active:hidden icon-hover block hs-dark-mode group items-center font-medium hover:text-primary text-link dark:text-darklink h-10 w-10 hover:bg-lightprimary dark:hover:bg-darkprimary  justify-center rounded-full"
+                                            data-hs-theme-click-value="dark" id="dark-layout">
+                                            <iconify-icon icon="solar:moon-line-duotone"
+                                                class=" text-2xl  text-link dark:text-darklink relative  hover:text-primary"></iconify-icon>
+                                        </button>
+                                        <button type="button"
+                                            class="hs-dark-mode-active:block icon-hover hidden hs-dark-mode group  items-center  font-medium hover:text-primary text-link dark:text-darklink h-10 w-10 hover:bg-lightprimary dark:hover:bg-darkprimary  justify-center rounded-full"
+                                            data-hs-theme-click-value="light" id="light-layout">
+                                            <iconify-icon icon="solar:sun-2-line-duotone"
+                                                class=" text-2xl  text-link dark:text-darklink relative  hover:text-primary"></iconify-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </aside> -->
+            </aside>
+
+            <div class="page-wrapper w-full" role="main">
+                <!-- Main Content -->
+                <main class="h-full ">
+                    <div class="container full-container py-5 xl:ps-6 ps-0 pt-0 pe-0 remove-ps">
+                        <!--  Header Start -->
+                        <header
+                            class="sticky top-0 inset-x-0 z-[1] flex flex-wrap md:justify-start md:flex-nowrap text-fs_15 py-3 lg:py-0 mb-6 bg-white dark:bg-dark rounded-md shadow-md">
+                            <div class="with-vertical w-full">
+                                <div class="w-full mx-auto px-4 lg:px-6" aria-label="Global">
+                                    <div class="relative md:flex md:items-center md:justify-between">
+                                        <div class="hs-collapse  grow md:block">
+                                            <div class="flex justify-between items-center">
+                                                <div class="flex items-center gap-2 lg:w-auto w-full justify-between">
+
+                                                    <div class="relative">
+                                                        <a class="xl:flex hidden text-xl icon-hover cursor-pointer text-link dark:text-darklink sidebartoggler h-10 w-10 hover:text-primary hover:bg-lightprimary dark:hover:bg-darkprimary  justify-center items-center rounded-full"
+                                                            id="headerCollapse" href="javascript:void(0)">
+                                                            <iconify-icon icon="solar:list-bold-duotone"
+                                                                class="text-2xl relative z-[1]"></iconify-icon>
+                                                        </a>
+                                                        <!--Mobile Sidebar Toggle -->
+                                                        <div class="sticky top-0 inset-x-0 xl:hidden">
+                                                            <div class="flex items-center">
+                                                                <!-- Navigation Toggle -->
+                                                                <a class="text-xl icon-hover cursor-pointer text-link dark:text-darklink sidebartoggler h-10 w-10 hover:text-primary hover:bg-lightprimary dark:hover:bg-darkprimary flex justify-center items-center rounded-full"
+                                                                    data-hs-overlay="#application-sidebar-brand"
+                                                                    aria-controls="application-sidebar-brand"
+                                                                    aria-label="Toggle navigation">
+                                                                    <iconify-icon icon="solar:list-bold-duotone"
+                                                                        class="text-2xl relative z-[1]"></iconify-icon>
+                                                                </a>
+                                                                <!-- End Navigation Toggle -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Sidebar Toggle -->
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!------Container-------->
+                        <div class="max-w-full">
+                            <div class="container full-container ">
+
+                                <div class="grid grid-cols-12 gap-6">
+                                    <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                                        <div class="card animate-card overflow-hidden">
+                                            <div class="card-body">
+                                                <div class="flex justify-between">
+                                                    <div class="px-6 py-4 bg-lightinfo dark:bg-darkinfo rounded-md">
+                                                        <i class="ti ti-clock text-4xl text-info"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h3
+                                                            class="text-2xl font-semibold text-dark dark:text-white mt-2">
+                                                            2+</h3>
+                                                        <p class="text-sm font-medium">
+                                                            Years</p>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-8">
+                                                    <h5 class="text-lg font-medium mb-2 text-dark dark:text-white">
+                                                        Experience</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                                        <div class="card animate-card overflow-hidden">
+                                            <div class="card-body">
+                                                <div class="flex justify-between">
+                                                    <div
+                                                        class="px-6 py-4 bg-lightwarning dark:bg-darkwarning rounded-md">
+                                                        <i class="ti ti-folder-search text-4xl text-warning"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h3
+                                                            class="text-2xl font-semibold text-dark dark:text-white mt-2">
+                                                            10</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-8">
+                                                    <h5 class="text-lg font-medium mb-2 text-dark dark:text-white">
+                                                        Projects</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                                        <div class="card animate-card overflow-hidden">
+                                            <div class="card-body">
+                                                <div class="flex justify-between">
+                                                    <div
+                                                        class="px-6 py-4 bg-lightprimary dark:bg-darkprimary rounded-md">
+                                                        <i class="ti ti-code text-4xl text-primary"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h3
+                                                            class="text-2xl font-semibold text-dark dark:text-white mt-2">
+                                                            20</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-8">
+                                                    <h5 class="text-lg font-medium mb-2 text-dark dark:text-white">
+                                                        Technologies</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                                        <div class="card animate-card overflow-hidden">
+                                            <div class="card-body">
+                                                <div class="flex justify-between">
+                                                    <div class="px-6 py-4 bg-lighterror dark:bg-darkerror rounded-md">
+                                                        <i class="ti ti-medal text-4xl text-error"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h3
+                                                            class="text-2xl font-semibold text-dark dark:text-white mt-2">
+                                                            8</h3>
+                                                    </div>
+
+                                                </div>
+                                                <div class="mt-8">
+                                                    <h5 class="text-lg font-medium mb-2 text-dark dark:text-white">
+                                                        Certificates</h5>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Expertise, Skills, Contact -->
+                                <div class="grid grid-cols-12 gap-6 mt-6">
+                                    <!-- Expertise Accordion Card (Left side full height) -->
+                                    <div class=" lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="flex justify-between items-center mb-5">
+                                                    <h5 class="card-title mb-0">Expertise</h5>
+                                                    <button
+                                                        class="w-9 h-9 flex items-center justify-center rounded-full bg-lightprimary text-primary hover:bg-primary hover:text-white dark:bg-darkprimary dark:hover:bg-primary"
+                                                        data-hs-overlay="#hs-focus-management-modal7"
+                                                        aria-expanded="false">
+                                                        <iconify-icon icon="solar:user-check-line-duotone"
+                                                            class="text-xl"></iconify-icon>
+                                                    </button>
+                                                </div>
+                                                <div class="hs-accordion-group">
+                                                    <div class="hs-accordion"
+                                                        id="hs-basic-with-title-and-arrow-stretched-heading-one">
+                                                        <button
+                                                            class="hs-accordion-toggle hs-accordion-active:text-primary py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start text-black hover:text-primary rounded-md dark:text-white dark:hover:text-primary"
+                                                            aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
+                                                            <div class="flex items-center gap-3">
+                                                                <div
+                                                                    class="px-4 py-2 bg-lightinfo dark:bg-darkinfo rounded-md">
+                                                                    <i class="ti ti-code text-xl text-info"></i>
+                                                                </div>
+                                                                Web Development
+                                                            </div>
+                                                            <svg class="hs-accordion-active:hidden block w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m6 9 6 6 6-6"></path>
+                                                            </svg>
+                                                            <svg class="hs-accordion-active:block hidden w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m18 15-6-6-6 6"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <div id="hs-basic-with-title-and-arrow-stretched-collapse-one"
+                                                            class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                                                            aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
+                                                            style="display: none;">
+                                                            <p>
+                                                                Build responsive websites with PHP, ASP.NET, and
+                                                                JavaScript frameworks.
+                                                                Use Laravel, CodeIgniter, and Vue.js for
+                                                                secure and scalable applications.
+                                                                Apply MVC patterns and full stack methods for
+                                                                efficiency.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="hs-accordion"
+                                                        id="hs-basic-with-title-and-arrow-stretched-heading-two">
+                                                        <button
+                                                            class="hs-accordion-toggle hs-accordion-active:text-primary py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start text-black hover:text-primary rounded-md dark:text-white dark:hover:text-primary"
+                                                            aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
+                                                            <div class="flex items-center gap-3">
+                                                                <div
+                                                                    class="px-4 py-2 bg-lightwarning dark:bg-darkwarning rounded-md">
+                                                                    <i class="ti ti-terminal text-xl text-warning"></i>
+                                                                </div>
+                                                                Software Development
+                                                            </div>
+                                                            <svg class="hs-accordion-active:block hidden w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m18 15-6-6-6 6"></path>
+                                                            </svg>
+                                                            <svg class="hs-accordion-active:hidden block w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m6 9 6 6 6-6"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <div id="hs-basic-with-title-and-arrow-stretched-collapse-two"
+                                                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                                                            aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
+                                                            style="display: none;">
+                                                            <p>
+                                                                Develop desktop systems with VB.NET, Java, and Python.
+                                                                Build applications for inventory, billing, reservations,
+                                                                and reporting.
+                                                                Focus on automation, reliability, and clear user flows.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="hs-accordion"
+                                                        id="hs-basic-with-title-and-arrow-stretched-heading-two">
+                                                        <button
+                                                            class="hs-accordion-toggle hs-accordion-active:text-primary py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start text-black hover:text-primary rounded-md dark:text-white dark:hover:text-primary"
+                                                            aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
+                                                            <div class="flex items-center gap-3">
+                                                                <div
+                                                                    class="px-4 py-2 bg-lightprimary dark:bg-darkprimary rounded-md">
+                                                                    <i class="ti ti-database text-xl text-primary"></i>
+                                                                </div>
+                                                                Database Management
+                                                            </div>
+                                                            <svg class="hs-accordion-active:block hidden w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m18 15-6-6-6 6"></path>
+                                                            </svg>
+                                                            <svg class="hs-accordion-active:hidden block w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m6 9 6 6 6-6"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <div id="hs-basic-with-title-and-arrow-stretched-collapse-two"
+                                                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                                                            aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
+                                                            style="display: none;">
+                                                            <p>
+                                                                Manage relational and NoSQL databases.
+                                                                Work with MySQL, and PostgreSQL.
+                                                                Apply query optimization and role-based access controls.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hs-accordion"
+                                                        id="hs-basic-with-title-and-arrow-stretched-heading-two">
+                                                        <button
+                                                            class="hs-accordion-toggle hs-accordion-active:text-primary py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start text-black hover:text-primary rounded-md dark:text-white dark:hover:text-primary"
+                                                            aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
+                                                            <div class="flex items-center gap-3">
+                                                                <div
+                                                                    class="px-4 py-2 bg-lighterror dark:bg-darkerror rounded-md">
+                                                                    <i class="ti ti-layout text-xl text-error"></i>
+                                                                </div>
+                                                                UI / UX Design
+                                                            </div>
+                                                            <svg class="hs-accordion-active:block hidden w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m18 15-6-6-6 6"></path>
+                                                            </svg>
+                                                            <svg class="hs-accordion-active:hidden block w-4 h-4"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="m6 9 6 6 6-6"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <div id="hs-basic-with-title-and-arrow-stretched-collapse-two"
+                                                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                                                            aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
+                                                            style="display: none;">
+                                                            <p>
+                                                                Design wireframes and prototypes with Figma.
+                                                                Create mobile-first layouts for apps and platforms.
+                                                                Focus on usability and data-driven interfaces.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Features Card (Below the grid row) -->
+                                        <!-- <div class="grid grid-cols-12 gap-6 mt-6">
+                                            <div class="col-span-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="flex justify-between items-center mb-5">
+                                                            <h5 class="card-title mb-0">Features</h5>
+                                                            <button
+                                                                class="w-9 h-9 flex items-center justify-center rounded-full bg-lightprimary text-primary hover:bg-primary hover:text-white dark:bg-darkprimary dark:hover:bg-primary"
+                                                                data-hs-overlay="#hs-focus-management-modal7"
+                                                                aria-expanded="false">
+                                                                <iconify-icon
+                                                                    icon="solar:pin-line-duotone"
+                                                                    class="text-xl"></iconify-icon>
+                                                            </button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+                                    <!-- Right side: Skills + Contact stacked -->
+                                    <div class="lg:col-span-6 md:col-span-12 col-span-12 flex flex-col gap-6">
+                                        <!-- Skill Set Card -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="flex justify-between items-center mb-5">
+                                                    <h5 class="card-title mb-0">Skill Set</h5>
+                                                    <button
+                                                        class="w-9 h-9 flex items-center justify-center rounded-full bg-lightprimary text-primary hover:bg-primary hover:text-white dark:bg-darkprimary dark:hover:bg-primary"
+                                                        data-hs-overlay="#hs-focus-management-modal7"
+                                                        aria-expanded="false">
+                                                        <iconify-icon icon="solar:settings-minimalistic-line-duotone"
+                                                            class="text-xl"></iconify-icon>
+                                                    </button>
+                                                </div>
+                                                <!-- Icons container -->
+                                                <div class="mt-6 flex flex-wrap gap-3 justify-content-center">
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:html5"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:css3"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:javascript"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:vuejs"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:react"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:laravel"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="logos:codeigniter-icon"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:php"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:mysql"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:python"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:postgresql"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:java"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:dot-net"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="vscode-icons:file-type-vb"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="logos:flutter"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:nodejs"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:git"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:github"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:figma"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <iconify-icon icon="devicon:photoshop"
+                                                            class="text-3xl text-primary"></iconify-icon>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Contact Card -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="flex justify-between items-center mb-5">
+                                                    <h5 class="card-title mb-0">Get in Touch</h5>
+                                                    <button
+                                                        class="w-9 h-9 flex items-center justify-center rounded-full bg-lightprimary text-primary hover:bg-primary hover:text-white dark:bg-darkprimary dark:hover:bg-primary"
+                                                        data-hs-overlay="#hs-focus-management-modal7"
+                                                        aria-expanded="false">
+                                                        <iconify-icon icon="solar:smile-circle-line-duotone"
+                                                            class="text-xl"></iconify-icon>
+                                                    </button>
+                                                </div>
+                                                <p>
+                                                    Let’s build something great together — feel free to connect with me
+                                                    through any of the
+                                                    platforms below.
+                                                </p>
+                                                <div class="mt-6 flex gap-4 flex-wrap">
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <div class="hs-tooltip inline-block">
+                                                            <button class="hs-tooltip-toggle">
+                                                                <a href="https://www.facebook.com/al.right.186"><iconify-icon
+                                                                        icon="streamline-logos:facebook-logo-2-block"
+                                                                        class="text-3xl"></iconify-icon></a>
+                                                                <span
+                                                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                                                                    role="tooltip">
+                                                                    Facebook
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <div class="hs-tooltip inline-block">
+                                                            <button class="hs-tooltip-toggle">
+                                                                <a href="mailto:rmdiaz1234@gmail.com"><iconify-icon
+                                                                        icon="streamline-logos:google-mail-logo-block"
+                                                                        class="text-3xl"></iconify-icon></a>
+                                                                <span
+                                                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                                                                    role="tooltip">
+                                                                    Gmail
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <div class="hs-tooltip inline-block">
+                                                            <button class="hs-tooltip-toggle">
+                                                                <a href="https://github.com/riguel8"><iconify-icon
+                                                                        icon="streamline-logos:github-logo-2-block"
+                                                                        class="text-3xl"></iconify-icon></a>
+                                                                <span
+                                                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                                                                    role="tooltip">
+                                                                    Github
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <div class="hs-tooltip inline-block">
+                                                            <button class="hs-tooltip-toggle">
+                                                                <a href="https://www.linkedin.com/in/rigueldi"><iconify-icon
+                                                                        icon="streamline-logos:linkedin-logo-block"
+                                                                        class="text-3xl"></iconify-icon></a>
+                                                                <span
+                                                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                                                                    role="tooltip">
+                                                                    Linkedin
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-lightprimary dark:bg-darkprimary  rounded-sm flex items-center justify-center h-11 w-11 relative transform translate-y-0 hover:-translate-y-2 duration-500 ease-in-out hover:z-10">
+                                                        <div class="hs-tooltip inline-block">
+                                                            <button class="hs-tooltip-toggle">
+                                                                <a href="https://wa.me/639451743608"
+                                                                    target="_blank"><iconify-icon
+                                                                        icon="streamline-logos:whatsapp-logo-block"
+                                                                        class="text-3xl"></iconify-icon></a>
+                                                                <span
+                                                                    class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-slate-700"
+                                                                    role="tooltip">
+                                                                    Whatsapp
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Main Content End -->
+
+            </div>
+        </div>
+        <!--end of project-->
+    </main>
+    <!-- Menu Canvas (mobile simplified) -->
+    <div id="navbar-offcanvas-example-menu"
+        class="lg:hidden bg-white hs-overlay  dark:bg-dark hs-overlay-open:translate-x-0  translate-x-full rtl:hs-overlay-open:translate-x-0  rtl:-translate-x-full  fixed top-0 right-0 rtl:left-0 rtl:right-auto transition-all duration-300 transform h-full max-w-xs  w-full z-[60] hidden"
+        tabindex="-1" data-hs-overlay-close-on-resize>
+        <div class="lg:flex gap-2 items-center">
+            <div class="flex lg:hidden lg:p-0 p-5">
+                <div class="brand-logo d-flex align-items-center justify-center">
+                    <a href="../index.html" class="text-nowrap logo-img">
+                        <img src="../assets/images/logos/logo-light.svg" class="dark:hidden block rtl:hidden"
+                            alt="Logo-Dark" />
+                        <img src="../assets/images/logos/logo-dark.svg"
+                            class="dark:block hidden rtl:hidden rtl:dark:hidden" alt="Logo-light" />
+                    </a>
+                </div>
+            </div>
+            <div class="lg:p-0 p-5 lg:flex gap-2 items-center" data-simplebar="" style="height: calc(100vh - 100px)">
+                <nav class="flex flex-col gap-3 mt-4">
+                    <a class="py-2 text-dark dark:text-darklink flex gap-2.5 items-center" href="#home">
+                        <iconify-icon icon="solar:home-line-duotone" class="text-xl"></iconify-icon>
+                        <span class="hide-menu font-medium">Home</span>
+                    </a>
+                    <a class="py-2 text-dark dark:text-darklink flex gap-2.5 items-center" href="#about">
+                        <iconify-icon icon="solar:user-circle-line-duotone" class="text-xl"></iconify-icon>
+                        <span class="hide-menu font-medium">About</span>
+                    </a>
+                    <a class="py-2 text-dark dark:text-darklink flex gap-2.5 items-center" href="#achievements">
+                        <iconify-icon icon="solar:medal-ribbons-star-line-duotone" class="text-xl"></iconify-icon>
+                        <span class="hide-menu font-medium">Achievements</span>
+                    </a>
+                    <a class="py-2 text-dark dark:text-darklink flex gap-2.5 items-center" href="#projects">
+                        <iconify-icon icon="solar:folder-favourite-bookmark-line-duotone"
+                            class="text-xl"></iconify-icon>
+                        <span class="hide-menu font-medium">Projects</span>
+                    </a>
+                    <a class="py-2 text-dark dark:text-darklink flex gap-2.5 items-center" href="#services">
+                        <iconify-icon icon="solar:case-line-duotone" class="text-xl"></iconify-icon>
+                        <span class="hide-menu font-medium">Services</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!------- Customizer button--------->
+    <button type="button"
+        class="btn overflow-hidden  sm:h-14 sm:w-14 h-10 w-10 rounded-full fixed sm:bottom-8 bottom-5 right-8 flex justify-center items-center rtl:left-8 rtl:right-auto z-10"
+        data-hs-overlay="#hs-overlay-right">
+        <i class="ti ti-settings sm:text-2xl text-lg text-white"></i>
+    </button>
+
+    <!------- Customizer Options--------->
+    <div id="hs-overlay-right"
+        class="customizer  rounded-none hs-overlay bg-white dark:bg-dark hs-overlay-open:translate-x-0  translate-x-full rtl:hs-overlay-open:translate-x-0  rtl:-translate-x-full  fixed top-0 right-0 rtl:left-0 rtl:right-auto transition-all duration-300 transform h-full max-w-xs  w-full z-[60] hidden "
+        tabindex="-1">
+        <div class="flex justify-between items-center  border-border dark:border-darkborder  border-b py-3 px-6 ">
+            <h3 class="font-semibold text-lg text-dark dark:text-white">
+                Settings
+            </h3>
+            <button type="button"
+                class="inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white text-sm "
+                data-hs-overlay="#hs-overlay-right">
+                <span class="sr-only">Close modal</span>
+                <i class="ti ti-x text-xl text-dark dark:text-white"></i>
+            </button>
+        </div>
+
+        <!-------Light/Dark Theme--------->
+        <div class="px-6 py-6" data-simplebar="" style="height: calc(100vh - 80px)">
+            <h6 class="font-semibold text-dark dark:text-white mb-2">Theme</h6>
+            <div class="flex flex-row gap-3 customizer-box mb-8" role="group">
+                <input type="radio" class=" btn-check" name="theme-layout" autocomplete="off" />
+                <label
+                    class="btn rounded-md border border-border dark:border-darkborder text-primary h-full py-3 px-5 hs-dark-mode-active:text-darklink cursor-pointer"
+                    for="light-layout" data-hs-theme-click-value="light"><i class="icon ti ti-sun text-2xl me-2 "></i>
+                    Light</label>
+                <input type="radio" class="btn-check" name="theme-layout" autocomplete="off" />
+                <label
+                    class="btn rounded-md border border-border dark:border-darkborder text-link  h-full py-3 px-5 cursor-pointer hs-dark-mode-active:text-primary"
+                    for="dark-layout" data-hs-theme-click-value="dark"><i class="icon ti ti-moon text-2xl me-2 "></i>
+                    Dark</label>
+            </div>
+
+            <!-------Theme Colors--------->
+            <h6 class="font-semibold mb-2 text-dark dark:text-white">Theme Colors</h6>
+            <div class="flex flex-row flex-wrap gap-3 customizer-box color-pallete mb-8" role="group">
+                <input type="radio" class="btn-check" name="color-theme-layout" id="Blue_Theme" autocomplete="off" />
+                <label
+                    class="hs-tooltip btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center hs-tooltip-toggle cursor-pointer"
+                    onclick="handleColorTheme('Blue_Theme')" for="Blue_Theme" data-bs-title="BLUE_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-1">
+                        <i class="ti ti-check  flex icon text-white fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Blue_Theme
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme" autocomplete="off" />
+                <label
+                    class="hs-tooltip hs-tooltip-toggle btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center cursor-pointer"
+                    onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-title="AQUA_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-2">
+                        <i class="ti ti-check text-white flex icon fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Aqua_Theme
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme" autocomplete="off" />
+                <label
+                    class="hs-tooltip hs-tooltip-toggle btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center cursor-pointer"
+                    onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-title="PURPLE_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-3">
+                        <i class="ti ti-check text-white flex icon fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Purple_Theme
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="color-theme-layout" id="green-theme-layout"
+                    autocomplete="off" />
+                <label
+                    class="hs-tooltip hs-tooltip-toggle btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center cursor-pointer"
+                    onclick="handleColorTheme('Green_Theme')" for="green-theme-layout" data-bs-title="GREEN_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-4">
+                        <i class="ti ti-check text-white flex icon fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Green_Theme
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout"
+                    autocomplete="off" />
+                <label
+                    class="hs-tooltip hs-tooltip-toggle btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center cursor-pointer"
+                    onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout" data-bs-title="CYAN_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-5">
+                        <i class="ti ti-check text-white flex icon fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Cyan_Theme
+                    </span>
+                </label>
+
+                <input type="radio" class="btn-check" name="color-theme-layout" id="orange-theme-layout"
+                    autocomplete="off" />
+                <label
+                    class="hs-tooltip hs-tooltip-toggle btn py-4 px-5 rounded-md border border-border dark:border-darkborder flex items-center  justify-center cursor-pointer"
+                    onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout" data-bs-title="ORANGE_THEME">
+                    <div class="color-box rounded-full flex items-center justify-center skin-6">
+                        <i class="ti ti-check text-white flex icon fs-5"></i>
+                    </div>
+                    <span class="tooltip hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible"
+                        role="tooltip">
+                        Orange_Theme
+                    </span>
+                </label>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function handleColorTheme(e) {
+            document.documentElement.setAttribute("data-color-theme", e);
+        }
+    </script>
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/js/app.init.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/simplebar.min.js"></script>
+    <script src="assets/js/iconify-icon.min.js"></script>
+    <script src="assets/js/preline.js"></script>
+    <script src="assets/js/input-number-index.js"></script>
+    <script src="assets/js/tooltip-index.js"></script>
+    <script src="assets/js/stepper-index.js"></script>
+
+    <script src="assets/js/jquery-jvectormap.min.js"></script>
+    <script src="assets/js/jquery-jvectormap-us-aea-en.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
