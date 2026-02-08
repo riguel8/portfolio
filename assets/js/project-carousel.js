@@ -61,7 +61,7 @@
             previewUrl: '',
             images: ['assets/images/projects/FARMURA/FARMURA-thumbnail.png',
                 'assets/images/projects/FARMURA/Login.png',
-                'assets/images/projects/FARMURA/Signup.png',
+                'assets/images/projects/FARMURA/SIGNUP.png',
                 'assets/images/projects/FARMURA/Home.png',
                 'assets/images/projects/FARMURA/Services.png',
                 'assets/images/projects/FARMURA/Wallet.png'
