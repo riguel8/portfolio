@@ -13,71 +13,18 @@
     <link href="assets/css/css2.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/tabler-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/contribution.css">
+    <link rel="stylesheet" href="assets/css/project-preview-modal.css">
     <!-- Core Css -->
     <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <title>Riguel</title>
     <link rel="stylesheet" href="assets/css/jquery-jvectormap.css">
     <style>
-        /* Contribution heatmap cells */
-        .contrib-cell {
-            width: 12px;
-            height: 12px;
-            border-radius: 2px;
-        }
-
-        /* CSS variable for the 'none' contribution color so it can switch with dark/light themes */
-        :root {
-            --contrib-none: #ebedf0;
-            /* light mode default (GitHub-like) */
-        }
-
-        /* when a `dark` class is present on the root, use the dark-mode color */
-        html.dark,
-        .dark {
-            --contrib-none: #4b5563;
-            /* dark-mode default */
-        }
-
-        /* Week column spacing (each week is a column of days) */
-        #contrib-chart {
-            align-items: flex-start;
-            /* ensure top aligned columns */
-            gap: 4px;
-            padding: 6px;
-        }
-
-        #contrib-chart .week-col {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        /* Legend squares */
-        .legend-square {
-            width: 12px;
-            height: 12px;
-            border-radius: 2px;
-            border: 1px solid rgba(27, 31, 35, 0.06);
-            margin: 0 4px;
-            gap: 2px;
-            background: var(--contrib-none);
-        }
-
-        /* Year buttons: consistent auto-layout and sizing */
-        .year-btn {
-            min-width: 90px;
-            height: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-        }
-
-        .year-btn.active {
-            background-color: #0ea5e9;
-            /* similar to bg-blue-600 but a bit brighter */
-            color: #fff !important;
-            border-color: transparent !important;
+        /* Project card clickable styling */
+        [data-project-id] {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -249,63 +196,7 @@
                         <!------Container-------->
                         <div class="max-w-full">
                             <div class="container full-container">
-                                <!-- <div class="grid grid-cols-12 gap-6 mt-6">
-                                    <div class="col-span-12">
-                                        <div class="card rounded-lg shadow-lg">
-                                            <div class="card-body">
-                                                
-                                                <div class="flex justify-between items-center mb-5">
-                                                    <h5 class="card-title mb-0">Contribution</h5>
-                                                    <button
-                                                        class="w-9 h-9 flex items-center justify-center rounded-full bg-lightprimary text-primary hover:bg-primary hover:text-white dark:bg-darkprimary dark:hover:bg-primary"
-                                                        data-hs-overlay="#hs-focus-management-modal7"
-                                                        aria-expanded="false">
-                                                        <iconify-icon icon="streamline-logos:github-logo-2-solid"
-                                                            class="text-xl"></iconify-icon>
-                                                    </button>
-                                                </div>
-
-                                            
-                                                <div class="flex justify-between items-start">
-                                                    
-                                                    <div class="overflow-x-auto">
-                                                        <div id="contrib-chart" class="flex gap-1">
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    
-                                                    <div class="flex flex-col gap-2 ml-4">
-                                                        <button
-                                                            class="year-btn  px-3 py-1 rounded btn-light-primary active"
-                                                            data-year="last">Last Year</button>
-                                                        <button class="year-btn px-3 py-1 rounded btn-light-primary"
-                                                            data-year="2025">2025</button>
-                                                        <button class="year-btn px-3 py-1 rounded btn-light-primary"
-                                                            data-year="2024">2024</button>
-                                                        <button class="year-btn px-3 py-1 rounded btn-light-primary"
-                                                            data-year="2023">2023</button>
-                                                    </div>
-                                                </div>
-
-                                                
-                                                <div class="flex justify-between items-center mt-3 text-xs opacity-70">
-                                                    <span id="contrib-total">0 contributions in the last year</span>
-                                                    <div class="flex items-center gap-1">
-                                                        <span class="me-2">Less</span>
-                                                        <div class="legend-square dark:bg-gray-600"></div>
-                                                        <div class="legend-square" style="background:#9be9a8"></div>
-                                                        <div class="legend-square" style="background:#40c463"></div>
-                                                        <div class="legend-square" style="background:#30a14e"></div>
-                                                        <div class="legend-square" style="background:#216e39"></div>
-                                                        <span class="ms-2">More</span>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                
                                 <div class="grid grid-cols-12 gap-6 mt-6">
                                     <div class="col-span-12">
                                         <div class="card">
@@ -352,13 +243,16 @@
                                                         <!-- Web Apps Card Grid -->
                                                         <div class="grid grid-cols-12 gap-6 mt-6">
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
-                                                                <div
-                                                                    class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
+                                                            <div
+                                                                class="col-span-12 lg:col-span-4 group cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-1"
+                                                                data-project-id="image-editor"
+                                                                                                                                >
+                                                                <div class="card transition-shadow duration-200 ease-in-out group-hover:shadow-xl dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
                                                                     <div class="p-5 flex flex-col flex-1 ">
                                                                         <h4 class="text-lg font-semibold">Image Editor
                                                                         </h4>
+                                                                        
                                                                         <span class="flex items-center">
                                                                             <i class="ti ti-calendar text-lg me-1"></i>
                                                                             February 2025</span>
@@ -368,16 +262,25 @@
                                                                             tools (lasso, poly-lasso, brush) for
                                                                             real-time interactive image editing.
                                                                         </p>
+                                                                        
                                                                     </div>
+                                                                    
                                                                     <!-- Card Image -->
                                                                     <img src="assets/images/projects/editor.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Laravel</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Vue.js</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Tailwind CSS</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
+                                                                
                                                             </div>
 
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="optical-capstone" >
                                                                 <div
                                                                     class="card flex dark:bg-gray-800 flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <div class="p-5 flex flex-col flex-1">
@@ -393,15 +296,22 @@
                                                                             records,
                                                                             and clinic operations.
                                                                         </p>
+                                                                        
                                                                     </div>
+                                                                
                                                                     <img src="assets/images/projects/optical.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                        <div class="p-5">
+                                                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Laravel</span>
+                                                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Bootstrap</span>
+                                                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                        </div>
                                                                 </div>
                                                             </div>
 
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="journal-science" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <div class="p-5 flex flex-col flex-1">
@@ -418,14 +328,20 @@
                                                                             content workflows, and user management.
 
                                                                         </p>
+                                                                        
                                                                     </div>
-                                                                    <img src="assets/images/projects/journal.png"
+                                                                    <img src="assets/images/projects/Journal/landing pages.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">CodeIgniter</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Tailwind CSS</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="boarding-house" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <div class="p-5 flex flex-col flex-1">
@@ -445,10 +361,15 @@
                                                                     <img src="assets/images/projects/404.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">ASP.NET</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Bootstrap</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="document-management" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <div class="p-5 flex flex-col flex-1">
@@ -457,7 +378,7 @@
                                                                         </h4>
                                                                         <span class="flex items-center">
                                                                             <i class="ti ti-calendar text-lg me-1"></i>
-                                                                            March 2024</span>
+                                                                            March 2023</span>
                                                                         <p class="mt-3 text-sm">
                                                                             Developed in ASP.NET & MySQL, enabling
                                                                             secure file storage, quick
@@ -467,6 +388,11 @@
                                                                     <img src="assets/images/projects/404.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">ASP.NET</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Bootstrap</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -479,7 +405,7 @@
                                                         <!-- Desktop Apps Card Grid -->
                                                         <div class="grid grid-cols-12 gap-6 mt-6">
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="hotel-reservation" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -500,10 +426,14 @@
                                                                     <img src="assets/images/projects/hotel.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">VB.NET</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="pos-inventory" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -525,6 +455,10 @@
                                                                     <img src="assets/images/projects/404.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">VB.NET</span>
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">MySQL</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -536,7 +470,32 @@
                                                         <!-- UI/UX Designs Card Grid -->
                                                         <div class="grid grid-cols-12 gap-6 mt-6">
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="Wanderly" >
+                                                                <div
+                                                                    class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
+                                                                    <!-- Card Content -->
+                                                                    <div class="p-5 flex flex-col flex-1 ">
+                                                                        <h4 class="text-lg font-semibold">Wanderly
+                                                                        </h4>
+                                                                        <span class="flex items-center">
+                                                                            <i class="ti ti-calendar text-lg me-1"></i>
+                                                                            February 2026</span>
+                                                                        <p class="mt-3 text-sm">
+                                                                            Designed a landing page for a travel app using Figma.
+                                                                        </p>
+                                                                    </div>
+                                                                    <!-- Card Image -->
+                                                                    <img src="assets/images/projects/Wanderly/Hero.png"
+                                                                        class="w-full max-w-full h-48 object-cover"
+                                                                        alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Figma</span>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Card Item -->
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="farmura" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -553,13 +512,17 @@
                                                                         </p>
                                                                     </div>
                                                                     <!-- Card Image -->
-                                                                    <img src="assets/images/projects/FARMURA-thumbnail.png"
+                                                                    <img src="assets/images/projects/FARMURA/FARMURA-thumbnail.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Figma</span>
+                                                                        
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="wine-price-edge" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -578,13 +541,16 @@
                                                                         </p>
                                                                     </div>
                                                                     <!-- Card Image -->
-                                                                    <img src="assets/images/projects/WINEAPP-thumbnail.png"
+                                                                    <img src="assets/images/projects/Wine/WINEAPP-thumbnail.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Figma</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="dm-resto" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -602,13 +568,16 @@
                                                                         </p>
                                                                     </div>
                                                                     <!-- Card Image -->
-                                                                    <img src="assets/images/projects/dmresto.png"
+                                                                    <img src="assets/images/projects/Resto/dmresto.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                    <div class="p-5">
+                                                                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Figma</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Card Item -->
-                                                            <div class="lg:col-span-4 col-span-12">
+                                                            <div class="lg:col-span-4 col-span-12" data-project-id="datedash" >
                                                                 <div
                                                                     class="card dark:bg-gray-800 flex flex-col h-full rounded-lg overflow-hidden shadow-lg">
                                                                     <!-- Card Content -->
@@ -625,9 +594,12 @@
                                                                         </p>
                                                                     </div>
                                                                     <!-- Card Image -->
-                                                                    <img src="assets/images/projects/datedash.png"
+                                                                    <img src="assets/images/projects/Datedash/datedash.png"
                                                                         class="w-full max-w-full h-48 object-cover"
                                                                         alt="Project Preview">
+                                                                        <div class="p-5">
+                                                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-medium border border-border bg-white text-dark  dark:bg-slate-900 dark:border-darkborder dark:text-white">Figma</span>
+                                                                        </div>    
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -638,6 +610,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                     
+      
                                 </div>
                                 <div class="grid grid-cols-12 gap-6 mt-6">
                                     <div class="col-span-12">
@@ -923,6 +897,47 @@
         </div>
     </div>
 
+    <!-- Universal Project Preview Modal -->
+    <div id="project-preview-modal" class="project-modal-overlay" style="display:none;">
+        <div class="project-modal-container">
+            <div class="project-modal-content">
+                <!-- Header -->
+                <div class="flex justify-between items-start py-3 px-4 border-b dark:border-gray-700">
+                    <div>
+                        <h3 id="modal-project-title" class="font-bold text-base text-gray-800 dark:text-white">
+                            Project Preview
+                        </h3>
+                        <a id="modal-preview-link" href="#" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-1 text-xs text-primary hover:underline mt-1" style="display:none;">
+                            <i class="ti ti-external-link text-sm"></i>
+                            View in Figma
+                        </a>
+                    </div>
+                    <button type="button" id="modal-close-btn" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        <span class="sr-only">Close</span>
+                        <i class="ti ti-x text-xl"></i>
+                    </button>
+                </div>
+                <!-- Carousel -->
+                <div class="project-carousel-wrapper">
+                    <div id="carousel-track" class="project-carousel-track">
+                        <!-- Slides injected dynamically -->
+                    </div>
+                    <!-- Prev / Next -->
+                    <button type="button" id="carousel-prev" class="project-carousel-btn project-carousel-prev">
+                        <i class="ti ti-chevron-left text-2xl"></i>
+                    </button>
+                    <button type="button" id="carousel-next" class="project-carousel-btn project-carousel-next">
+                        <i class="ti ti-chevron-right text-2xl"></i>
+                    </button>
+                    <!-- Dots -->
+                    <div id="carousel-dots" class="project-carousel-dots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Universal Project Preview Modal -->
+
     <script>
         function handleColorTheme(e) {
             document.documentElement.setAttribute("data-color-theme", e);
@@ -941,143 +956,14 @@
 
     <script src="assets/js/jquery-jvectormap.min.js"></script>
     <script src="assets/js/jquery-jvectormap-us-aea-en.js"></script>
+    
+    <script src="assets/js/owl.carousel.min.js"></script>
 
+    <script src="assets/js/github-contributions.js"></script>
 
+    <script src="assets/js/project-carousel.js"></script>
 
-    <script>
-        const GITHUB_USERNAME = "riguel8";
-        const GITHUB_GRAPHQL_TOKEN = "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"; // Replace with your token
-
-        // Color levels; NONE will be read from CSS variable to support light/dark mode dynamically
-        const levelColorsBase = {
-            NONE: null, // will be filled from CSS variable
-            FIRST_QUARTILE: "#9be9a8",
-            SECOND_QUARTILE: "#40c463",
-            THIRD_QUARTILE: "#30a14e",
-            FOURTH_QUARTILE: "#216e39"
-        };
-
-        function getLevelColors() {
-            const rootStyles = getComputedStyle(document.documentElement);
-            const noneColor = rootStyles.getPropertyValue('--contrib-none').trim() || '#ebedf0';
-            return { ...levelColorsBase, NONE: noneColor };
-        }
-
-        async function fetchContributions(year) {
-            let from, to;
-            if (year === "last") {
-                to = new Date();
-                from = new Date();
-                from.setFullYear(to.getFullYear() - 1);
-            } else {
-                from = new Date(`${year}-01-01T00:00:00Z`);
-                to = new Date(`${year}-12-31T23:59:59Z`);
-            }
-
-            const query = `
-    query {
-      user(login: "${GITHUB_USERNAME}") {
-        contributionsCollection(from: "${from.toISOString()}", to: "${to.toISOString()}") {
-          contributionCalendar {
-            totalContributions
-            months {
-              name
-              year
-            }
-            weeks {
-              contributionDays {
-                date
-                contributionCount
-                contributionLevel
-              }
-            }
-          }
-        }
-      }
-    }`;
-
-            const resp = await fetch("https://api.github.com/graphql", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${GITHUB_GRAPHQL_TOKEN}`
-                },
-                body: JSON.stringify({ query })
-            });
-
-            const json = await resp.json();
-            return json.data.user.contributionsCollection.contributionCalendar;
-        }
-
-        function renderContributions(calendar) {
-            const chart = document.getElementById("contrib-chart");
-            chart.innerHTML = "";
-
-            const levelColors = getLevelColors();
-            calendar.weeks.forEach(week => {
-                const weekCol = document.createElement("div");
-                // add a semantic week column class for styling
-                weekCol.classList.add("week-col");
-                week.contributionDays.forEach(day => {
-                    const cell = document.createElement("div");
-                    cell.classList.add("contrib-cell");
-                    cell.style.backgroundColor = levelColors[day.contributionLevel];
-                    cell.title = `${day.contributionCount} contributions on ${day.date}`;
-                    weekCol.appendChild(cell);
-                });
-                chart.appendChild(weekCol);
-            });
-
-            document.getElementById("contrib-total").innerText =
-                `${calendar.totalContributions} contributions in the selected year`;
-        }
-
-        // Year button click
-        document.querySelectorAll(".year-btn").forEach(btn => {
-            btn.addEventListener("click", async () => {
-                // normalize previous buttons
-                document.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
-                // apply our active modifier
-                btn.classList.add("active");
-
-                const year = btn.dataset.year;
-                const data = await fetchContributions(year);
-                renderContributions(data);
-            });
-        });
-
-        // Load last year on startup
-        (async () => {
-            // mark last year button active
-            const defaultBtn = document.querySelector('.year-btn[data-year="last"]');
-            if (defaultBtn) defaultBtn.classList.add('active');
-            const data = await fetchContributions("last");
-            renderContributions(data);
-        })();
-
-        // Re-render heatmap when theme changes (observes class changes on <html>)
-        const observer = new MutationObserver(muts => {
-            for (const m of muts) {
-                if (m.attributeName === 'class' || m.attributeName === 'data-color-theme') {
-                    // re-render with the same selected year
-                    const activeBtn = document.querySelector('.year-btn.active');
-                    const year = (activeBtn && activeBtn.dataset.year) || 'last';
-                    fetchContributions(year).then(renderContributions).catch(() => { });
-                }
-            }
-        });
-        observer.observe(document.documentElement, { attributes: true });
-
-        // If the page has explicit theme toggle buttons (data-hs-theme-click-value), hook them to re-render
-        document.querySelectorAll('[data-hs-theme-click-value]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const activeBtn = document.querySelector('.year-btn.active');
-                const year = (activeBtn && activeBtn.dataset.year) || 'last';
-                // small timeout to allow theme class toggling to take effect
-                setTimeout(() => fetchContributions(year).then(renderContributions).catch(() => { }), 120);
-            });
-        });
-    </script>
+    
 </body>
 
 </html>
