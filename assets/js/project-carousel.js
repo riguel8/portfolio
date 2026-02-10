@@ -9,6 +9,24 @@
     const projectsData = {
 
         // Web Applications
+        'maison':{
+            title: 'Maison',
+            images: ['assets/images/projects/Maison/Hero.png',
+                'assets/images/projects/Maison/features.png',
+                'assets/images/projects/Maison/shop.png',
+                'assets/images/projects/Maison/contact.png',
+            ]
+        },
+
+        'farmura-admin':{
+            title: 'FARMURA Admin',
+            images: ['assets/images/projects/FARMURA-admin/LOGIN.png',
+                'assets/images/projects/FARMURA-admin/dashboard.png',
+                'assets/images/projects/FARMURA-admin/pasakay.png',
+                'assets/images/projects/FARMURA-admin/pasugo.png',
+            ]
+        },
+
         'image-editor': {
             title: 'Image Editor',
             images: ['assets/images/projects/editor.png',
